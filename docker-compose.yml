@@ -1,0 +1,26 @@
+version: '3.5'
+
+
+volumes:
+  opt-splunk-etc:
+  opt-splunk-var:
+
+services:
+
+  splunk:
+
+    container_name: splunk
+    hostname: splunk
+    build: splunk
+    environment:
+      SPLUNK_PASSWORD: roach1234
+      SPLUNK_START_ARGS: --accept-license
+    volumes:
+      - opt-splunk-etc:/opt/splunk/etc
+      - opt-splunk-var:/opt/splunk/var
+      - /Users/timveil/dev/troubleshooting/test:/tmp/roachlogs
+    ports:
+      - "8000:8000"
+      - "8088:8088"
+      - "1514:1514"
+
