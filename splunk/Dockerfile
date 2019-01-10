@@ -1,4 +1,4 @@
-FROM splunk/splunk:7.2.0
+FROM splunk/splunk:latest
 
 LABEL maintainer="tjveil@gmail.com"
 
