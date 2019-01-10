@@ -1,0 +1,11 @@
+<datetime>
+    <define name="_cockroach_timestamp" extract="year, month, day, hour, minute, second, subsecond">
+        <text>(\d{2})(\d{2})(\d{2})\s(\d{2}):(\d{2}):(\d{2})\.(\d{6})</text>
+    </define>
+    <timePatterns>
+        <use name="_cockroach_timestamp"/>
+    </timePatterns>
+    <datePatterns>
+        <use name="_cockroach_timestamp"/>
+    </datePatterns>
+</datetime>
