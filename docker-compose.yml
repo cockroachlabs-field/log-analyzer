@@ -12,7 +12,7 @@ services:
       - SPLUNK_START_ARGS=--accept-license
       - DEBUG=true
     volumes:
-      - /Users/timveil/dev/troubleshooting/logs:/tmp/cockroach-logs
+      - /Users/timveil/dev/troubleshooting/logs:/tmp/cockroach-batch
     ports:
       - "8000:8000"
 

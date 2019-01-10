@@ -1,9 +1,15 @@
-FROM splunk/splunk:latest
+FROM splunk/splunk:7.2.0
 
 LABEL maintainer="tjveil@gmail.com"
 
-RUN mkdir -p /tmp/cockroach-logs
-RUN chmod -R 777 /tmp/cockroach-logs
+RUN mkdir -p /tmp/cockroach-batch
+RUN chmod -R 777 /tmp/cockroach-batch
+
+RUN mkdir -p /tmp/cockroach-monitor
+RUN chmod -R 777 /tmp/cockroach-monitor
+
+ADD test.log /tmp/cockroach-monitor/test.log
+
 
 ADD datetime.xml /opt/splunk/etc/system/local/datetime.xml
 ADD inputs.conf /opt/splunk/etc/system/local/inputs.conf
