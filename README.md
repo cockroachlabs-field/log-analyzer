@@ -3,6 +3,8 @@
 
 http://localhost:8000/en-US/app/search/search
 
+ http://localhost:8000/en-us/debug/refresh
+
 ^\w(?P<crdb_timestamp>\d+\s+\d+:\d+:\d+\.\d+)
 
 
