@@ -22,4 +22,6 @@ LOCAL_LOG_DIR=[CHANGE_ME]
 
 2) Run `docker-compose up` or `./run-start.sh` to bring up the Splunk instance and begin indexing your CockroachDB `.log` files.
 
-3) To stop and cleanup, run `./run-clean.sh`.  This will stop Splunk and execute `docker system prune -a -f`.
+3) To access the Splunk UI go to `http://localhost:8000`.  The username is `admin` and the password is `roach1234` as specified by the `SPLUNK_PASSWORD` environment variable in the `docker-compose.yml` file.
+
+4) To stop and cleanup, run `./run-clean.sh`.  This will stop Splunk and execute `docker system prune -a -f`.
