@@ -7,12 +7,25 @@ http://localhost:8000/en-US/app/search/search
 
 ^\w(?P<crdb_timestamp>\d+\s+\d+:\d+:\d+\.\d+)
 
-^\w\d{6}\s\d{2:\d{2}:\d{2}\.\d{6}
+^\w\d{6}\s\d{2}:\d{2}:\d{2}\.\d{6}
 
 181221 09:25:38.294986
 
 
 %y:%m:%d %H:%M:%S.%6N
+
+./splunk cmd btool inputs list
+
+./splunk cmd btool inputs list --debug | grep '\['
+
+./splunk cmd btool --app=search props list
+
+./splunk cmd btool props list --debug
+
+./splunk cmd btool props list --debug  | grep '\['
+
+sourcetype=cockroach_log "1 util/log/clog.go:1176  [config] file created at: 2018/12/20 15:30:03"
+
 
 
 TIME_FORMAT matching timestamps outside the acceptable time window
