@@ -13,12 +13,10 @@ Where the first character is either `I`, `W` or `E`, signifying an `INFO`, `WARN
 * A local directory that contains the CockroachDB files you want to index.
 
 ## Getting Started
-1) Create a `.env` file and place it in the root of this project.  This file should contain one property, `LOCAL_LOG_DIR`, that points to the location on your machine where your CockroachDB `.log` files are stored.
-
-For my testing I've created a `troubleshooting` directory in my home directory (e.g. `/Users/timveil/dev/troubleshooting/logs`).  Create what makes sense for you.
-```properties
-LOCAL_LOG_DIR=[CHANGE_ME]
-``` 
+1) Create a `.env` file and place it in the root of this project.  This file should contain one property, `LOCAL_LOG_DIR`, that points to the location on your machine where your CockroachDB `.log` files are stored.  For my testing I've created a `troubleshooting` directory in my home directory (e.g. `/Users/timveil/dev/troubleshooting/logs`).  Create what makes sense for you.
+    ```properties
+    LOCAL_LOG_DIR=[CHANGE_ME]
+    ``` 
 
 2) Run `docker-compose up` or `./run-start.sh` to bring up the Splunk instance and begin indexing your CockroachDB `.log` files.
 
