@@ -20,6 +20,6 @@ For my testing I've created a `troubleshooting` directory in my home directory (
 LOCAL_LOG_DIR=[CHANGE_ME]
 ``` 
 
-2) Run `docker-compose up` or `./run-start.sh` to bring up the Splunk instance and begin indexing your files.
+2) Run `docker-compose up` or `./run-start.sh` to bring up the Splunk instance and begin indexing your CockroachDB `.log` files.
 
 3) To stop and cleanup, run `./run-clean.sh`.  This will stop Splunk and execute `docker system prune -a -f`.
