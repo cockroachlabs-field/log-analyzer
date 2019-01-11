@@ -8,12 +8,12 @@ RUN mkdir -p /tmp/cockroach-batch \
     && chmod -R 777 /tmp/cockroach-monitor
 
 ### uncomment for easy testing
-# COPY data/test-monitor.log /tmp/cockroach-monitor/test-monitor.log
+# ADD data/test-monitor.log /tmp/cockroach-monitor/test-monitor.log
 
-COPY conf/authorize.conf /opt/splunk/etc/system/local/authorize.conf
-COPY conf/datetime.xml /opt/splunk/etc/system/local/datetime.xml
-COPY conf/indexes.conf /opt/splunk/etc/system/local/indexes.conf
-COPY conf/inputs.conf /opt/splunk/etc/system/local/inputs.conf
-COPY conf/props.conf /opt/splunk/etc/system/local/props.conf
-COPY conf/ui-tour.conf /opt/splunk/etc/system/local/ui-tour.conf
-COPY conf/ui-prefs.conf /opt/splunk/etc/system/local/ui-prefs.conf
+ADD conf/authorize.conf /opt/splunk/etc/system/local/authorize.conf
+ADD conf/datetime.xml /opt/splunk/etc/system/local/datetime.xml
+ADD conf/indexes.conf /opt/splunk/etc/system/local/indexes.conf
+ADD conf/inputs.conf /opt/splunk/etc/system/local/inputs.conf
+ADD conf/props.conf /opt/splunk/etc/system/local/props.conf
+ADD conf/ui-tour.conf /opt/splunk/etc/system/local/ui-tour.conf
+ADD conf/ui-prefs.conf /opt/splunk/etc/system/local/ui-prefs.conf
