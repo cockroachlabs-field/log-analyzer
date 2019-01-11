@@ -7,7 +7,7 @@ RUN chmod -R 777 /tmp/cockroach-batch
 
 RUN mkdir -p /tmp/cockroach-monitor
 RUN chmod -R 777 /tmp/cockroach-monitor
-COPY test.log /tmp/cockroach-monitor/test.log
+COPY test-monitor.log /tmp/cockroach-monitor/test-monitor.log
 
 COPY authorize.conf /opt/splunk/etc/system/local/authorize.conf
 COPY datetime.xml /opt/splunk/etc/system/local/datetime.xml

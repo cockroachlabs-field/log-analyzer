@@ -1,0 +1,20 @@
+I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] file created at: 2018/12/20 15:30:03
+I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] running on machine: us-central1-node-0003
+I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] binary: CockroachDB CCL v2.1.2 (x86_64-unknown-linux-gnu, built 2018/12/10 20:15:47, go1.10.3)
+I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] arguments: [/home/cockroach/cockroach start --cache=.25 --max-sql-memory=.25 --certs-dir=certs --store=path=/mnt/data1 --advertise-addr=10.128.0.2 --locality=region=gcp-us-central1 --join=10.128.0.4,10.128.0.5,10.128.0.6]
+I181220 15:30:03.971234 1 util/log/clog.go:1176  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I181220 15:30:03.971232 1 server/status/recorder.go:609  available memory from cgroups (8.0 EiB) exceeds system memory 29 GiB, using system memory
+I181220 15:30:03.971560 1 cli/start.go:1069  CockroachDB CCL v2.1.2 (x86_64-unknown-linux-gnu, built 2018/12/10 20:15:47, go1.10.3)
+I181220 15:30:04.078594 1 server/status/recorder.go:609  available memory from cgroups (8.0 EiB) exceeds system memory 29 GiB, using system memory
+I181220 15:30:04.078641 1 server/config.go:385  system total memory: 29 GiB
+I181220 15:30:04.078711 1 server/config.go:387  server configuration:
+max offset             500000000
+cache size             7.4 GiB
+SQL memory pool size   7.4 GiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I181220 15:30:04.078731 1 cli/start.go:913  using local environment variables: COCKROACH_CHANNEL=foo, COCKROACH_SKIP_KEY_PERMISSION_CHECK=true, GOTRACEBACK=all
+I181220 15:30:04.078753 1 cli/start.go:920  process identity: uid 1001 euid 1001 gid 1002 egid 1002
+I181220 15:30:04.078763 1 cli/start.go:545  starting cockroach node

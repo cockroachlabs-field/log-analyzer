@@ -1,6 +1,8 @@
 
 #### is it because upload ignores file timestamp; maybe i need to fix the file timestamp
 
+event count should be 13
+
 http://localhost:8000/en-US/app/search/search
 
  http://localhost:8000/en-us/debug/refresh
