@@ -7,7 +7,6 @@ volumes:
 services:
 
   splunk:
-
     container_name: splunk
     hostname: splunk
     build: splunk
