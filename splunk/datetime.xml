@@ -1,11 +1,57 @@
 <datetime>
-    <define name="_cockroach_timestamp" extract="year, month, day, hour, minute, second, subsecond">
-        <text>(\d{2})(\d{2})(\d{2})\s(\d{2}):(\d{2}):(\d{2})\.(\d{6})</text>
+
+    <define name="_year" extract="year">
+        <text><![CDATA[(20\d\d|19\d\d|[901]\d(?!\d))]]></text>
     </define>
+
+    <define name="_month" extract="month">
+        <text><![CDATA[(0?[1-9]|1[012])(?!:)]]></text>
+    </define>
+
+    <define name="_day" extract="day">
+        <text><![CDATA[(0?[1-9]|[12]\d|3[01])]]></text>
+    </define>
+
+    <define name="_hour" extract="hour">
+        <text><![CDATA[([01]?[0-9]|[012][0-3])(?!\d)]]></text>
+    </define>
+
+    <define name="_minute" extract="minute">
+        <text><![CDATA[([0-6]\d)(?!\d)]]></text>
+    </define>
+
+    <define name="_second" extract="second">
+        <text><![CDATA[([0-6]\d)(?!\d)]]></text>
+    </define>
+
+    <define name="_time" extract="hour, minute, second, subsecond, ampm, zone">
+        <text><![CDATA[(?<!\d)]]></text>
+        <use name="_hour"/>
+        <text><![CDATA[:]]></text>
+        <use name="_minute"/>
+        <text><![CDATA[:]]></text>
+        <use name="_second"/>
+        <text><![CDATA[(?:(?: \d{4})?[:,\.](\d+))? {0,2}]]></text>
+    </define>
+
+    <!-- 181221 09:25:38.294986 -->
+    <define name="_cockroach_timestamp" extract="year, month, day, hour, minute, second, subsecond">
+        <text>^\w(\d{2})(\d{2})(\d{2})\s(\d{2}):(\d{2}):(\d{2})\.(\d{6})</text>
+    </define>
+
+    <!-- 181221 -->
+    <define name="_cockroach_date" extract="year, month, day">
+        <text>^\w(\d{2})(\d{2})(\d{2})\s</text>
+    </define>
+
     <timePatterns>
+        <use name="_time"/>
         <use name="_cockroach_timestamp"/>
     </timePatterns>
+
     <datePatterns>
+        <use name="_cockroach_date"/>
         <use name="_cockroach_timestamp"/>
     </datePatterns>
+
 </datetime>

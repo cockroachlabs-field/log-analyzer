@@ -32,6 +32,19 @@ TIME_FORMAT matching timestamps outside the acceptable time window
 
 |makeresults|eval STATUS_TIME="181219 15:19:58.246092"|eval Time=strptime(STATUS_TIME,"%y%m%d %H:%M:%S.%6N")
 
+```
+<datetime>
+    <define name="_cockroach_timestamp" extract="year, month, day, hour, minute, second, subsecond">
+        <text>(\d{2})(\d{2})(\d{2})\s(\d{2}):(\d{2}):(\d{2})\.(\d{6})</text>
+    </define>
+    <timePatterns>
+        <use name="_cockroach_timestamp"/>
+    </timePatterns>
+    <datePatterns>
+        <use name="_cockroach_timestamp"/>
+    </datePatterns>
+</datetime>
+```
 
 ```xml<!--   Version 4.0 -->
       
