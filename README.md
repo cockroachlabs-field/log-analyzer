@@ -25,5 +25,5 @@ Where the first character is either `I`, `W` or `E`, signifying an `INFO`, `WARN
 4) To stop and cleanup, run `./run-clean.sh`.  This will stop Splunk and execute `docker system prune -a -f`.
 
 ## Thoughts and Considerations
-* This is useful for analyzing a relatively small amount of data given this single node, Docker based approach.  Adjustments could be made to scale this but are beyond the scope of my endeavor
+* This is useful for analyzing a relatively small amount of data given this single node, Docker based approach.  Adjustments could be made to scale this but are beyond the scope of my initial effort.
 * The configurations used here, specifically those found in `datetime.xml`, `inputs.conf` and `props.conf` could be easily ported to a proper Splunk environment to enable real-time CockroachDB log parsing, etc.
