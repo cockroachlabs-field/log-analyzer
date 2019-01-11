@@ -1,5 +1,5 @@
 # CockroachDB Log File Analyzer with Splunk
-This simple project spins up and properly configures a single node Splunk Docker image and monitors a local directory for CockroachDB log files.  The intent of this project is to simplify troubleshooting of log files across a multi-node CockroachDB cluster. Since the timestamps included in the current version of CockroachDB log files are not parsed correctly by Splunk out of the box, a number of configurations have been modified to support the CockroachDB format.  Those configurations can be found in the `splunk > conf` directory.
+This simple project spins up and properly configures a single node Splunk Docker image and monitors a local directory (`docker volume`) for CockroachDB log files.  The intent of this project is to simplify troubleshooting of log files across a multi-node CockroachDB cluster. Since the timestamps included in the current version of CockroachDB log files are not parsed correctly by Splunk out of the box, a number of configurations have been modified to support the CockroachDB format.  Those configurations can be found in the `splunk > conf` directory.
 
 For example, a typical line in a CockroachDB log file looks like this...
 ```
