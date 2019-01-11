@@ -20,3 +20,4 @@ I181220 15:30:04.078753 1 cli/start.go:920  process identity: uid 1001 euid 1001
 I181220 15:30:04.078763 1 cli/start.go:545  starting cockroach node
 W181220 15:30:04.078764 1 cli/start.go:545  fake warn message
 E181220 15:30:04.078765 1 cli/start.go:545  fake error message
+F181220 15:30:04.078765 1 cli/start.go:545  fake fatal message

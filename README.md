@@ -6,7 +6,7 @@ For example, a typical line in a CockroachDB log file looks like this...
 I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] running on machine: us-central1-node-0003
 ```
 
-Where the first character is either `I`, `W` or `E`, signifying an `INFO`, `WARN` or `ERROR` statement.  Immediately following the log level is the custom timestamp, which is equivalent to `%y:%m:%d %H:%M:%S.%6N` in standard Unix `strptime()` parlance.  The rest of the log statement is application specific.
+Where the first character is either `I`, `W`, `E` or `F`, signifying an `INFO`, `WARN`, `ERROR` or `FATAL` statement.  Immediately following the log level is the custom timestamp, which is equivalent to `%y:%m:%d %H:%M:%S.%6N` in standard Unix `strptime()` parlance.  The rest of the log statement is application specific.
 
 ## Prerequisites
 * Latest Docker edition that supports `docker-compose`.  I use the latest "Docker Desktop" for Mac for my testing.
