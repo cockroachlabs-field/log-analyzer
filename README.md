@@ -1,5 +1,5 @@
 
-
+#### is it because upload ignores file timestamp; maybe i need to fix the file timestamp
 
 http://localhost:8000/en-US/app/search/search
 
@@ -46,7 +46,8 @@ TIME_FORMAT matching timestamps outside the acceptable time window
 </datetime>
 ```
 
-```xml<!--   Version 4.0 -->
+```xml
+<!--   Version 4.0 -->
       
       <!-- datetime.xml -->
       <!-- This file contains the general formulas for parsing date/time formats. -->
@@ -272,4 +273,53 @@ TIME_FORMAT matching timestamps outside the acceptable time window
       
       </datetime>
 
+```
+
+```
+<datetime>
+    <!--
+        Example cockroach log file entry:
+            I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] file created at: 2018/12/20 15:30:03
+    -->
+
+    <!-- 181221 09:25:38.294986 -->
+    <define name="_cockroach_timestamp" extract="year, month, day, hour, minute, second, subsecond">
+        <text><![CDATA[(?:^[IEW])(\d{2})(\d{2})(\d{2})\s(\d{2}):(\d{2}):(\d{2})\.(\d{6})]]></text>
+    </define>
+
+    <!-- 181221 -->
+    <define name="_cockroach_date" extract="year, month, day">
+        <use name="_cockroach_year"/>
+        <use name="_cockroach_month"/>
+        <use name="_cockroach_day"/>
+    </define>
+
+    <define name="_cockroach_year" extract="year">
+        <text><![CDATA[(?:^[IEW])(\d{2})]]></text>
+    </define>
+
+    <define name="_cockroach_month" extract="month">
+        <text><![CDATA[(?:^[IEW]\d{2})(\d{2})]]></text>
+    </define>
+
+    <define name="_cockroach_day" extract="day">
+        <text><![CDATA[(?:^[IEW]\d{4})(\d{2})]]></text>
+    </define>
+
+    <!-- 09:25:38.294986 -->
+    <define name="_cockroach_time" extract="hour, minute, second, subsecond">
+        <text><![CDATA[(?:^[IEW]\d{6}\s)(\d{2}):(\d{2}):(\d{2})\.(\d{6})]]></text>
+    </define>
+
+    <timePatterns>
+        <use name="_cockroach_time"/>
+        <use name="_cockroach_timestamp"/>
+    </timePatterns>
+
+    <datePatterns>
+        <use name="_cockroach_date"/>
+        <use name="_cockroach_timestamp"/>
+    </datePatterns>
+
+</datetime>
 ```
