@@ -18,3 +18,5 @@ event log enabled      true
 I181220 15:30:04.078731 1 cli/start.go:913  using local environment variables: COCKROACH_CHANNEL=foo, COCKROACH_SKIP_KEY_PERMISSION_CHECK=true, GOTRACEBACK=all
 I181220 15:30:04.078753 1 cli/start.go:920  process identity: uid 1001 euid 1001 gid 1002 egid 1002
 I181220 15:30:04.078763 1 cli/start.go:545  starting cockroach node
+W181220 15:30:04.078764 1 cli/start.go:545  fake warn message
+E181220 15:30:04.078765 1 cli/start.go:545  fake error message
