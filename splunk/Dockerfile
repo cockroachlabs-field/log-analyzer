@@ -2,13 +2,12 @@ FROM splunk/splunk:7.2.1
 
 LABEL maintainer="tjveil@gmail.com"
 
-RUN mkdir -p /tmp/cockroach-batch
-RUN chmod -R 777 /tmp/cockroach-batch
+RUN mkdir -p /tmp/cockroach-batch \
+    && chmod -R 777 /tmp/cockroach-batch \
+    && mkdir -p /tmp/cockroach-monitor \
+    && chmod -R 777 /tmp/cockroach-monitor
 
-RUN mkdir -p /tmp/cockroach-monitor
-RUN chmod -R 777 /tmp/cockroach-monitor
-
-# uncomment for easy testing
+### uncomment for easy testing
 # COPY data/test-monitor.log /tmp/cockroach-monitor/test-monitor.log
 
 COPY conf/authorize.conf /opt/splunk/etc/system/local/authorize.conf
