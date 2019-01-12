@@ -1,0 +1,1 @@
+think there is a problem with how we are generationg the debug zip
