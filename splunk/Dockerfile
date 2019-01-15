@@ -17,3 +17,4 @@ ADD conf/inputs.conf /opt/splunk/etc/system/local/inputs.conf
 ADD conf/props.conf /opt/splunk/etc/system/local/props.conf
 ADD conf/ui-tour.conf /opt/splunk/etc/system/local/ui-tour.conf
 ADD conf/ui-prefs.conf /opt/splunk/etc/system/local/ui-prefs.conf
+ADD conf/transforms.conf /opt/splunk/etc/system/local/transforms.conf
