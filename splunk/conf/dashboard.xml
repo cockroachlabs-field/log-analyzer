@@ -1,5 +1,6 @@
-<form theme="light">
+<form theme="dark">
     <label>CockroachDB Log Analysis</label>
+    <description>Docker based tool for analyzing CockroachDB log files.  See https://github.com/timveil-cockroach/log-analyzer for more information</description>
     <fieldset submitButton="false" autoRun="true">
         <input type="time" token="field1" searchWhenChanged="true">
             <label></label>
