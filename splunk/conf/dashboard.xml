@@ -11,8 +11,8 @@
     </fieldset>
     <row>
         <panel>
+            <title>Total Events</title>
             <single>
-                <title>Total Events</title>
                 <search>
                     <query>sourcetype=cockroach_log | stats count</query>
                     <earliest>$field1.earliest$</earliest>
@@ -22,8 +22,8 @@
             </single>
         </panel>
         <panel>
+            <title>Fatal Events</title>
             <single>
-                <title>Fatal Events</title>
                 <search>
                     <query>sourcetype=cockroach_log cockroach_log_level="F" | stats count</query>
                     <earliest>$field1.earliest$</earliest>
@@ -38,8 +38,8 @@
             </single>
         </panel>
         <panel>
+            <title>Error Events</title>
             <single>
-                <title>Error Events</title>
                 <search>
                     <query>sourcetype=cockroach_log cockroach_log_level="E" | stats count</query>
                     <earliest>$field1.earliest$</earliest>
@@ -53,8 +53,8 @@
             </single>
         </panel>
         <panel>
+            <title>Warn Events</title>
             <single>
-                <title>Warn Events</title>
                 <search>
                     <query>sourcetype=cockroach_log cockroach_log_level="W" | stats count</query>
                     <earliest>$field1.earliest$</earliest>
@@ -70,8 +70,8 @@
     </row>
     <row>
         <panel>
+            <title>Events by Cockroach Node</title>
             <chart>
-                <title>Events by Cockroach Node</title>
                 <search>
                     <query>sourcetype=cockroach_log | timechart count by host</query>
                     <earliest>$field1.earliest$</earliest>
@@ -92,8 +92,8 @@
     </row>
     <row>
         <panel>
+            <title>Events by Type</title>
             <chart>
-                <title>Events by Type</title>
                 <search>
                     <query>sourcetype=cockroach_log | where (cockroach_log_level="F" or cockroach_log_level="E" or cockroach_log_level="W") | timechart count by cockroach_log_level</query>
                     <earliest>$field1.earliest$</earliest>

@@ -23,3 +23,6 @@ ADD conf/props.conf /opt/splunk/etc/system/local/props.conf
 ADD conf/ui-prefs.conf /opt/splunk/etc/system/local/ui-prefs.conf
 ADD conf/ui-tour.conf /opt/splunk/etc/system/local/ui-tour.conf
 ADD conf/viewstates.conf /opt/splunk/etc/system/local/viewstates.conf
+
+ADD conf/dashboard.xml /opt/splunk/etc/apps/search/local/data/ui/views/dashboard.xml
+ADD conf/user-prefs.conf /opt/splunk/etc/users/admin/user-prefs/local/user-prefs.conf
