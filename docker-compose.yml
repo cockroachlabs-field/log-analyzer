@@ -2,6 +2,7 @@ version: '3.5'
 
 volumes:
   opt-splunk-var:
+  opt-splunk-etc:
 
 services:
 
@@ -14,8 +15,8 @@ services:
       - SPLUNK_START_ARGS=--accept-license
       - DEBUG=true
     volumes:
-      - opt-splunk-var:/opt/splunk/var      -
-      - ${LOCAL_LOG_DIR}:/tmp/cockroach-batch
+      - opt-splunk-var:/opt/splunk/var
+      - opt-splunk-etc:/opt/splunk/etc
     ports:
       - "8000:8000"
 
