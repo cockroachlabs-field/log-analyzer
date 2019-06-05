@@ -13,6 +13,8 @@ I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] running on machine: us
 
 Where the first character is either `I`, `W`, `E` or `F`, signifying an `INFO`, `WARN`, `ERROR` or `FATAL` statement.  Immediately following the log level is the custom timestamp, which is equivalent to `%y:%m:%d %H:%M:%S.%6N` in standard Unix `strptime()` parlance.  The rest of the log statement is application specific.
 
+I created a quick dashboard (see below) to summarize the events found in the `debug.zip`.  You can use this dashboard to drill into specific days or events of interest.
+
 ![dashboard](dashboard.png)
 
 ## Prerequisites
