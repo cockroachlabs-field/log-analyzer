@@ -7,7 +7,7 @@
 This simple project spins up and properly configures a single node Splunk Docker image and parses a provided `debug.zip` file containing CockroachDB log files.  The intent of this project is to simplify troubleshooting of log files across a multi-node CockroachDB cluster. Since the timestamps included in the current version of CockroachDB log files are not parsed correctly by Splunk out of the box, a number of configurations have been modified to support the CockroachDB format.  Those configurations can be found in the `splunk > conf` directory.
 
 For example, a typical line in a CockroachDB log file looks like this...
-```
+```text
 I181220 15:30:03.971234 1 util/log/clog.go:1176  [config] running on machine: us-central1-node-0003
 ```
 
@@ -38,16 +38,16 @@ I created a quick dashboard (see below) to summarize the events found in the `de
 
 ## Helpful Commands
 Open interactive shell with `splunk` container
-```
+```bash
 docker-compose exec splunk /bin/bash
 ```
 
 Search for all `E` or error log messages sorted by `_time` (log entry timestamp) descending
-```
+```text
 sourcetype=cockroach_log cockroach_log_level=E | sort _time
 ```
 
 Search all log messages sorted by `_time` (log entry timestamp) descending 
-```
+```text
 sourcetype=cockroach_log | sort _time
 ```
