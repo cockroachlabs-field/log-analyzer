@@ -3,7 +3,7 @@ FROM splunk/splunk:latest
 LABEL maintainer="tjveil@gmail.com"
 
 RUN sudo apt-get update -y && \
-	sudo apt-get install -y unzip && \
+    sudo apt-get install -y unzip && \
     mkdir -p /tmp/crdb && \
     chmod -R 777 /tmp/crdb
 
