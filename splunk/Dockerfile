@@ -1,4 +1,4 @@
-FROM splunk/splunk:latest
+FROM splunk/splunk:8.0-debian
 
 LABEL maintainer="tjveil@gmail.com"
 
