@@ -9,7 +9,7 @@ RUN sudo apt-get update -y && \
 
 ADD *.zip /tmp/crdb
 
-RUN unzip -q /tmp/crdb/*.zip -d /tmp/crdb && \
+RUN unzip -oq /tmp/crdb/*.zip -d /tmp/crdb && \
     rm -rf /tmp/crdb/*.zip && \
     find /tmp/crdb -type f ! -name '*.log' -delete && \
     find /tmp/crdb -type d -empty -delete && \
